@@ -1,70 +1,83 @@
-# Getting Started with Create React App
+🖥️ iNotebook – MERN Stack Note Management App
+📌 Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+iNotebook is a full-stack note-taking web application built using the MERN stack (MongoDB, Express.js, React.js, Node.js). It allows users to securely sign up, log in, create, view, edit, and delete personal notes. The app ensures that each user can only access their own notes with JWT authentication and bcrypt-based password hashing.
 
-## Available Scripts
+This project is being developed as part of the Full Stack Software Developer Intern Assignment.
+I am actively working on extending features and enhancements, but since the submission deadline has arrived, I am submitting the current working build.
 
-In the project directory, you can run:
+✨ Features Implemented
 
-### `npm start`
+🔐 Secure User Authentication (Signup/Login with JWT & bcrypt).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+📝 Note Management → Create, View, Update, Delete notes.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+👤 User-Specific Notes (each user only sees their own notes).
 
-### `npm test`
+🌐 MERN Stack Architecture (MongoDB, Express.js, React.js, Node.js).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+🎨 Responsive & Clean UI with React-Bootstrap.
 
-### `npm run build`
+🔄 Global State Management using React Context API.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+🛠️ Tech Stack
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Frontend: React.js, React-Bootstrap, Context API
+Backend: Node.js, Express.js
+Database: MongoDB
+Authentication: JWT, bcrypt
+Tools: GitHub, VS Code, Postman
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+🚀 Getting Started
+1️⃣ Clone the Repository
+git clone https://github.com/RichaKumariDas/NoteSync.git
+cd iNotebook
 
-### `npm run eject`
+2️⃣ Start the Frontend (React App)
+cd notebook
+npm install
+npm start
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Runs the app in development mode.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Open: http://localhost:3000
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3️⃣ Start the Backend (Node.js + Express API)
 
-## Learn More
+Open a new terminal:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+cd backend
+npm install
+nodemon index.js
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+Starts the backend server at: http://localhost:5000
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Ensure MongoDB connection string is set correctly.
 
-### Analyzing the Bundle Size
+4️⃣ Environment Variables
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+In the backend/.env file, add:
 
-### Making a Progressive Web App
+MONGO_URI=your_mongo_connection_string
+JWT_SECRET=your_secret_key
+PORT=5000
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+📦 Development Status
 
-### Advanced Configuration
+✅ Core features are implemented and working (authentication, CRUD notes, user isolation).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+🔄 I am continuously working on additional features like offline support, caching, real-time sync, and desktop packaging.
 
-### Deployment
+📅 Due to the submission deadline, this version is being shared, but improvements are ongoing.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+👩‍💻 Author
 
-### `npm run build` fails to minify
+Richa Kumari
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+📧 Email: richadas9801@gmail.com
+
+🌐 LinkedIn: https://www.linkedin.com/in/richadas02/
+
+💻 GitHub: https://github.com/RichaKumariDas

@@ -16,9 +16,8 @@ const Noteitem = (props) => {
           deleteNote(note._id);
           showAlert('Note deleted successfully', 'success');
         }}
-      />
+      /> 
     </div>
-    
     {/* ✅ Title pushed down */}
     <h5 className="note-title">{note.title}</h5>
 
