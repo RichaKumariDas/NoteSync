@@ -1,21 +1,26 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import '../styles/Auth.css'; // Updated CSS path
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import "../styles/Auth.css"; // ✅ Custom glassmorphism styles
 
 const Login = (props) => {
   const [credentials, setCredentials] = useState({ email: "", password: "" });
+  const [showPassword, setShowPassword] = useState(false);
   let navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const response = await fetch("http://localhost:5000/api/auth/login", {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: credentials.email, password: credentials.password })
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email: credentials.email,
+        password: credentials.password,
+      }),
     });
     const json = await response.json();
     if (json.success) {
-      localStorage.setItem('token', json.authtoken);
+      localStorage.setItem("token", json.authtoken);
       props.showAlert("Logged in successfully", "success");
       navigate("/");
     } else {
@@ -29,15 +34,13 @@ const Login = (props) => {
 
   return (
     <div className="auth-background">
-      {/* Glowing Yellow Bubble */}
-      <div className="bubble"></div>
-
-      {/* Glassy Login Card */}
       <div className="card">
         <h2 id="login-title">Login</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
-            <label htmlFor="email" className="form-label">Email address</label>
+            <label htmlFor="email" className="form-label">
+              Email address
+            </label>
             <input
               type="email"
               className="form-control"
@@ -48,10 +51,14 @@ const Login = (props) => {
               required
             />
           </div>
-          <div className="mb-3">
-            <label htmlFor="password" className="form-label">Password</label>
+
+          {/* Password Input with Toggle */}
+          <div className="mb-3" style={{ position: "relative" }}>
+            <label htmlFor="password" className="form-label">
+              Password
+            </label>
             <input
-              type="password"
+              type={showPassword ? "text" : "password"}
               className="form-control"
               id="password"
               name="password"
@@ -59,8 +66,17 @@ const Login = (props) => {
               onChange={onChange}
               required
             />
+            <span
+              onClick={() => setShowPassword(!showPassword)}
+              className="password-toggle"
+            >
+              {showPassword ? <FaEyeSlash /> : <FaEye />}
+            </span>
           </div>
-          <button type="submit" className="btn" style={{width: "100%"}}>Login</button>
+
+          <button type="submit" className="btn" style={{ width: "100%" }}>
+            Login
+          </button>
         </form>
       </div>
     </div>

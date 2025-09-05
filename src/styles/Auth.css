@@ -914,3 +914,20 @@ textarea.form-control {
   to { opacity: 1; transform: translateY(0); }
 }
 
+.password-toggle {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-top: 16px;  /* ✅ lifts it slightly upward */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.password-toggle svg {
+  color: yellow;  /* ✅ yellow eye color */
+  font-size: 1.2rem;
+}
