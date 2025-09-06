@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import '../styles/Auth.css'; // ✅ Custom glassmorphism styles
+import '../styles/Auth.css'; // Custom glassmorphism styles
 
 const Signup = (props) => {
   const navigate = useNavigate();
@@ -12,11 +12,12 @@ const Signup = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { name, email, password } = credentials;
-    const response = await fetch("http://localhost:5000/api/auth/createuser", {
+    const response = await fetch("https://notesync-ag8s.onrender.com/api/auth/createuser", { // Updated URL
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, email, password })
     });
+
     const json = await response.json();
     if (json.success) {
       localStorage.setItem('token', json.authtoken);
@@ -63,7 +64,7 @@ const Signup = (props) => {
               onClick={() => setShowPassword(!showPassword)}
               className="password-toggle"
             >
-              {showPassword ? <FaEyeSlash /> : <FaEye />}
+              {showPassword ? <FaEyeSlash color="yellow" /> : <FaEye color="yellow" />}
             </span>
           </div>
 
@@ -83,7 +84,7 @@ const Signup = (props) => {
               onClick={() => setShowCPassword(!showCPassword)}
               className="password-toggle"
             >
-              {showCPassword ? <FaEyeSlash /> : <FaEye />}
+              {showCPassword ? <FaEyeSlash color="yellow" /> : <FaEye color="yellow" />}
             </span>
           </div>
 

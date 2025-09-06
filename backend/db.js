@@ -1,6 +1,7 @@
+require("dotenv").config();
 const mongoose = require("mongoose");
 
-const mongoURI = "mongodb+srv://richadas9801:Richa%409801@notesynccluster.dqns4ce.mongodb.net/inotebook?retryWrites=true&w=majority&appName=NoteSyncCluster";  // use Atlas URI from .env
+const mongoURI = process.env.MONGO_URI;
 
 const connectToMongo = async () => {
   try {

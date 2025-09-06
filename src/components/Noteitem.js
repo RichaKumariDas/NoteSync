@@ -19,6 +19,8 @@ const Noteitem = (props) => {
       /> 
     </div>
     {/* ✅ Title pushed down */}
+
+    
     <h5 className="note-title">{note.title}</h5>
 
     <p className="note-desc">{note.description}</p>

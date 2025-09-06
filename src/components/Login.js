@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import "../styles/Auth.css"; // ✅ Custom glassmorphism styles
+import "../styles/Auth.css"; //  Custom glassmorphism styles
 
 const Login = (props) => {
   const [credentials, setCredentials] = useState({ email: "", password: "" });
@@ -10,7 +10,7 @@ const Login = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://localhost:5000/api/auth/login", {
+    const response = await fetch("https://notesync-ag8s.onrender.com/api/auth/login", { //  Updated URL
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -18,6 +18,7 @@ const Login = (props) => {
         password: credentials.password,
       }),
     });
+
     const json = await response.json();
     if (json.success) {
       localStorage.setItem("token", json.authtoken);
@@ -70,7 +71,7 @@ const Login = (props) => {
               onClick={() => setShowPassword(!showPassword)}
               className="password-toggle"
             >
-              {showPassword ? <FaEyeSlash /> : <FaEye />}
+              {showPassword ? <FaEyeSlash color="yellow" /> : <FaEye color="yellow" />}
             </span>
           </div>
 
